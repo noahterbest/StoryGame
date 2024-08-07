@@ -1,4 +1,4 @@
-// Noah TerBest
+package Main;// Noah TerBest
 // Github.com/noahterbest/StoryGame
 
 import java.awt.event.KeyListener;
