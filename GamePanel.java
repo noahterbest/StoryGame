@@ -16,6 +16,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     //FPS
     int FPS = 60;
+    int frameCount = 0;
 
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
@@ -41,41 +42,38 @@ public class GamePanel extends JPanel implements Runnable {
 
     @Override
     public void run() {
-        while (gameThread != null){
+        double drawInterval = 1000000000 / FPS;
+        double nextDrawTime = System.nanoTime() + drawInterval;
+        long lastFPSCheck = System.nanoTime();
 
-            //System.out.println("Game Thread Running");
-
-            //Framerate limiter
-            double drawInterval = 1000000000 / FPS;
-            double nextDrawTime = System.nanoTime() + drawInterval;
-
-            //Outputs current nanoTime
-            //long currentTime = System.nanoTime();
-            //System.out.println("Current Time: " + currentTime);
-
-
+        while (gameThread != null) {
             update();
-
             repaint();
-
+            frameCount++;
 
             try {
                 double remainingTime = nextDrawTime - System.nanoTime();
-                remainingTime = remainingTime/1000000;
+                remainingTime = remainingTime / 1000000;
 
-                if(remainingTime < 0) {
+                if (remainingTime < 0) {
                     System.out.println("Frame took longer than expected to render");
                     remainingTime = 0;
                 }
                 Thread.sleep((long) remainingTime);
-                nextDrawTime = + drawInterval;
+                nextDrawTime += drawInterval;
+
+                // Calculate and output FPS every second
+                if (System.nanoTime() - lastFPSCheck >= 1000000000) {
+                    System.out.println("Current FPS: " + frameCount);
+                    frameCount = 0;
+                    lastFPSCheck = System.nanoTime();
+                }
 
             } catch (InterruptedException e) {
                 System.out.println("Thread Interrupted");
                 e.printStackTrace();
             }
         }
-
     }
 
     public void update(){
