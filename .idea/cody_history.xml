@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChatHistory">
+    <accountData>
+      <list>
+        <AccountData>
+          <accountId value="VXNlcjozMDczNzA=" />
+          <chats>
+            <list>
+              <chat>
+                <internalId value="aef38224-93f5-48db-ab7f-7632d921cdaa" />
+              </chat>
+              <chat>
+                <internalId value="ec8167c7-c98b-4fa7-862d-2537180f59d5" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-5-sonnet-20240620" />
+                    <provider value="Anthropic" />
+                    <tags>
+                      <list>
+                        <option value="gateway" />
+                        <option value="accuracy" />
+                        <option value="recommended" />
+                        <option value="free" />
+                      </list>
+                    </tags>
+                    <title value="Claude 3.5 Sonnet" />
+                    <usage>
+                      <list>
+                        <option value="chat" />
+                        <option value="edit" />
+                      </list>
+                    </usage>
+                  </llm>
+                </llm>
+                <messages>
+                  <list>
+                    <message>
+                      <speaker value="HUMAN" />
+                      <text value="I want to create a 2D game in Java. Can you write code to help me get there?" />
+                    </message>
+                    <message>
+                      <speaker value="ASSISTANT" />
+                    </message>
+                    <message>
+                      <speaker value="HUMAN" />
+                      <text value="Can you write a hello world code in java" />
+                    </message>
+                    <message>
+                      <speaker value="ASSISTANT" />
+                      <text value="&lt;html&gt;&lt;b&gt;&amp;#9888; Error performing this action&lt;/b&gt;&lt;br&gt;&lt;br&gt;Please retry sending your message. If you tried to run a command, try it again.&lt;br&gt;If the issue persists, please &lt;a href=&quot;https://github.com/sourcegraph/jetbrains/issues/new?template=bug_report.yml&amp;labels=bug&amp;projects=sourcegraph/381&amp;title=bug%3A+Connection+closed+without+receiving+any+events&amp;about=IntelliJ+IDEA+2023.3.7+%28Ultimate+Edition%29%0ABuild+%23IU-233.15325.26%2C+built+on+June+5%2C+2024%0ALicensed+to+Noah+TerBest%0ASubscription+is+active+until+February+15%2C+2025.%0AFor+educational+use+only.%0ARuntime+version%3A+17.0.10%2B1-b1087.23+amd64%0AVM%3A+OpenJDK+64-Bit+Server+VM+by+JetBrains+s.r.o.%0AWindows+11.0%0AGC%3A+G1+Young+Generation%2C+G1+Old+Generation%0AMemory%3A+4086M%0ACores%3A+16%0ARegistry%3A%0A++ide.experimental.ui%3Dtrue%0ANon-Bundled+Plugins%3A%0A++com.jetbrains.edu+%282024.6-2023.3-2517%29%0A++com.sourcegraph.jetbrains+%286.0.16%29%0A++com.tabbyml.intellij-tabby+%281.6.3%29%0AKotlin%3A+233.15325.26-IJ%0A&amp;logs=Stacktrace%3A+%60%60%60Connection+closed+without+receiving+any+events%60%60%60&quot;&gt;create a support ticket&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&lt;sub&gt;Error: Connection closed without receiving any events&lt;/sub&gt;&lt;/html&gt;" />
+                    </message>
+                    <message>
+                      <speaker value="HUMAN" />
+                      <text value="I want to create a 2D game in Java. Can you write code to help me get there?" />
+                    </message>
+                    <message>
+                      <speaker value="ASSISTANT" />
+                      <text value="Certainly! I'd be happy to help you get started with creating a 2D game in Java. Here's a basic framework to set up a game window using Java's Swing library:&#10;&#10;```java&#10;import javax.swing.*;&#10;import java.awt.*;&#10;&#10;public class Game2D extends JPanel {&#10;&#10;    public Game2D() {&#10;        setPreferredSize(new Dimension(800, 600));&#10;    }&#10;&#10;    @Override&#10;    protected void paintComponent(Graphics g) {&#10;        super.paintComponent(g);&#10;        // Game rendering code will go here&#10;    }&#10;&#10;    public void update() {&#10;        // Game logic update code will go here&#10;    }&#10;&#10;    public static void main(String[] args) {&#10;        JFrame frame = new JFrame(&quot;2D Game&quot;);&#10;        Game2D game = new Game2D();&#10;        frame.add(game);&#10;        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);&#10;        frame.pack();&#10;        frame.setVisible(true);&#10;&#10;        // Game loop&#10;        while (true) {&#10;            game.update();&#10;            game.repaint();&#10;            try {&#10;                Thread.sleep(16); // Approx. 60 FPS&#10;            } catch (InterruptedException e) {&#10;                e.printStackTrace();&#10;            }&#10;        }&#10;    }&#10;}&#10;```&#10;&#10;This code sets up a basic game window and a game loop. Here's what it does:&#10;&#10;1. Creates a JPanel subclass called Game2D where we'll do our drawing.&#10;2. Sets up a main method that creates a JFrame and adds our Game2D panel to it.&#10;3. Implements a simple game loop that calls update() and repaint() methods 60 times per second.&#10;&#10;To start building your game:&#10;1. Add game objects and logic in the update() method.&#10;2. Draw your game elements in the paintComponent() method.&#10;3. Add keyboard and mouse input handling.&#10;&#10;As you develop your game, you might want to consider using a game development framework like libGDX or JavaFX for more advanced features. Let me know if you want to expand on any specific part of the game, such as character movement, collision detection, or sprite rendering!" />
+                    </message>
+                    <message>
+                      <speaker value="HUMAN" />
+                      <text value="Can you rework this code taking into account my class file name is Main" />
+                    </message>
+                    <message>
+                      <speaker value="ASSISTANT" />
+                      <text value="Certainly! I'll rework the code to use the class name Main instead of Game2D. Here's the updated version:&#10;&#10;```java&#10;import javax.swing.*;&#10;import java.awt.*;&#10;&#10;public class Main extends JPanel {&#10;&#10;    public Main() {&#10;        setPreferredSize(new Dimension(800, 600));&#10;    }&#10;&#10;    @Override&#10;    protected void paintComponent(Graphics g) {&#10;        super.paintComponent(g);&#10;        // Game rendering code will go here&#10;    }&#10;&#10;    public void update() {&#10;        // Game logic update code will go here&#10;    }&#10;&#10;    public static void main(String[] args) {&#10;        JFrame frame = new JFrame(&quot;2D Game&quot;);&#10;        Main game = new Main();&#10;        frame.add(game);&#10;        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);&#10;        frame.pack();&#10;        frame.setVisible(true);&#10;&#10;        // Game loop&#10;        while (true) {&#10;            game.update();&#10;            game.repaint();&#10;            try {&#10;                Thread.sleep(16); // Approx. 60 FPS&#10;            } catch (InterruptedException e) {&#10;                e.printStackTrace();&#10;            }&#10;        }&#10;    }&#10;}&#10;```&#10;&#10;This code maintains the same functionality as before, but now the class is named Main instead of Game2D. The structure and logic remain the same, providing you with a solid starting point for your 2D game development in Java." />
+                    </message>
+                  </list>
+                </messages>
+                <updatedAt value="2024-08-05T20:53:55.7244143" />
+              </chat>
+              <chat>
+                <internalId value="8fb33c29-0a88-4619-8c87-e7eea124af10" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-5-sonnet-20240620" />
+                    <provider value="Anthropic" />
+                    <tags>
+                      <list>
+                        <option value="gateway" />
+                        <option value="accuracy" />
+                        <option value="recommended" />
+                        <option value="free" />
+                      </list>
+                    </tags>
+                    <title value="Claude 3.5 Sonnet" />
+                    <usage>
+                      <list>
+                        <option value="chat" />
+                        <option value="edit" />
+                      </list>
+                    </usage>
+                  </llm>
+                </llm>
+              </chat>
+              <chat>
+                <internalId value="2185662d-09f9-4c37-af38-1a68c6551474" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-5-sonnet-20240620" />
+                    <provider value="Anthropic" />
+                    <tags>
+                      <list>
+                        <option value="gateway" />
+                        <option value="accuracy" />
+                        <option value="recommended" />
+                        <option value="free" />
+                      </list>
+                    </tags>
+                    <title value="Claude 3.5 Sonnet" />
+                    <usage>
+                      <list>
+                        <option value="chat" />
+                        <option value="edit" />
+                      </list>
+                    </usage>
+                  </llm>
+                </llm>
+              </chat>
+              <chat>
+                <internalId value="49c20c0e-484a-43fc-807b-e215e29c4a00" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-5-sonnet-20240620" />
+                    <provider value="Anthropic" />
+                    <tags>
+                      <list>
+                        <option value="gateway" />
+                        <option value="accuracy" />
+                        <option value="recommended" />
+                        <option value="free" />
+                      </list>
+                    </tags>
+                    <title value="Claude 3.5 Sonnet" />
+                    <usage>
+                      <list>
+                        <option value="chat" />
+                        <option value="edit" />
+                      </list>
+                    </usage>
+                  </llm>
+                </llm>
+              </chat>
+              <chat>
+                <internalId value="98f017fa-7315-4c74-82ee-a06fdbd12a5f" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-5-sonnet-20240620" />
+                    <provider value="Anthropic" />
+                    <tags>
+                      <list>
+                        <option value="gateway" />
+                        <option value="accuracy" />
+                        <option value="recommended" />
+                        <option value="free" />
+                      </list>
+                    </tags>
+                    <title value="Claude 3.5 Sonnet" />
+                    <usage>
+                      <list>
+                        <option value="chat" />
+                        <option value="edit" />
+                      </list>
+                    </usage>
+                  </llm>
+                </llm>
+              </chat>
+              <chat>
+                <internalId value="620f46f6-ea03-47fa-8868-05e43d49b473" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-5-sonnet-20240620" />
+                    <provider value="Anthropic" />
+                    <tags>
+                      <list>
+                        <option value="gateway" />
+                        <option value="accuracy" />
+                        <option value="recommended" />
+                        <option value="free" />
+                      </list>
+                    </tags>
+                    <title value="Claude 3.5 Sonnet" />
+                    <usage>
+                      <list>
+                        <option value="chat" />
+                        <option value="edit" />
+                      </list>
+                    </usage>
+                  </llm>
+                </llm>
+              </chat>
+              <chat>
+                <internalId value="86d0d755-006b-455d-8c1f-4663265a2f24" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-5-sonnet-20240620" />
+                    <provider value="Anthropic" />
+                    <tags>
+                      <list>
+                        <option value="gateway" />
+                        <option value="accuracy" />
+                        <option value="recommended" />
+                        <option value="free" />
+                      </list>
+                    </tags>
+                    <title value="Claude 3.5 Sonnet" />
+                    <usage>
+                      <list>
+                        <option value="chat" />
+                        <option value="edit" />
+                      </list>
+                    </usage>
+                  </llm>
+                </llm>
+              </chat>
+            </list>
+          </chats>
+          <defaultLlm>
+            <llm>
+              <model value="anthropic/claude-3-5-sonnet-20240620" />
+              <provider value="Anthropic" />
+              <tags>
+                <list>
+                  <option value="gateway" />
+                  <option value="accuracy" />
+                  <option value="recommended" />
+                  <option value="free" />
+                </list>
+              </tags>
+              <title value="Claude 3.5 Sonnet" />
+              <usage>
+                <list>
+                  <option value="chat" />
+                  <option value="edit" />
+                </list>
+              </usage>
+            </llm>
+          </defaultLlm>
+        </AccountData>
+      </list>
+    </accountData>
+  </component>
+</project>
